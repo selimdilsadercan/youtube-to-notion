@@ -1,16 +1,15 @@
 from googleapiclient.discovery import build
-from utils import get_thumbnail, create_notion_data
+from utils import create_notion_data
 
 api = "AIzaSyDV7BVSXeADSNxgbeOsXi3CMDX2rGSdEdc"
 playlistId = "PLP0eWxP5FFpSVO_HCeGcjFbRN2VBRfP8D"
 
 youtube = build('youtube', 'v3', developerKey=api)
 
-
 request = youtube.playlistItems().list(
     part = "snippet,contentDetails",
     playlistId = playlistId,
-    maxResults = 100
+    maxResults = 20
 )
 
 response = request.execute()
@@ -19,7 +18,7 @@ print(response["items"][0]["snippet"]["resourceId"]["videoId"])
 
 for i, video in enumerate(response["items"]):
     print(video["snippet"]["resourceId"]["videoId"])
-    if i >= 20:
+    if i >= 10:
         video_id = video["snippet"]["resourceId"]["videoId"]
 
         title = "deneme"
