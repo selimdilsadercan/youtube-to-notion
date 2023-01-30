@@ -2,7 +2,7 @@ from googleapiclient.discovery import build
 from utils import create_notion_data
 
 api = "AIzaSyDV7BVSXeADSNxgbeOsXi3CMDX2rGSdEdc"
-playlistId = "PLP0eWxP5FFpSVO_HCeGcjFbRN2VBRfP8D"
+playlistId = "PLWKjhJtqVAbmUE5IqyfGYEYjrZBYzaT4m"
 
 youtube = build('youtube', 'v3', developerKey=api)
 
@@ -18,7 +18,7 @@ print(response["items"][0]["snippet"]["resourceId"]["videoId"])
 
 for i, video in enumerate(response["items"]):
     print(video["snippet"]["resourceId"]["videoId"])
-    if i >= 10:
+    if i >= 0:
         video_id = video["snippet"]["resourceId"]["videoId"]
 
         title = "deneme"

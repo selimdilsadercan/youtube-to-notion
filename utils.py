@@ -3,7 +3,7 @@ from datetime import datetime, timezone
 
 NOTION_TOKEN = "secret_WrEJo8j0bx6KLNBuvEG0ViMxaWiUTskPpN8a7yiGXYg"
 DATABASE_ID = "348f529615c44c2696b4d61c72765a44"
-
+    
 headers = {
     "Authorization": "Bearer " + NOTION_TOKEN,
     "Content-Type": "application/json",
