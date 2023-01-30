@@ -33,7 +33,7 @@ def get_pages():
 
     results = data["results"]
     return results
-
+ 
 pages = get_pages()
 for page in pages:
     page_id = page["id"]
