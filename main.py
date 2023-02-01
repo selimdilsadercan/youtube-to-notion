@@ -6,7 +6,7 @@ title = input("Basligi Girin: ")
 video_url = input("Video Adresini Kopyala: ")
 
 cover_img_url = get_thumbnail(video_url)
-duration = str(get_video_duration(video_url))
+duration = get_video_duration(video_url)
 
 
 data = {    
@@ -15,4 +15,4 @@ data = {
     "Kaç Dakika": {"number": duration},
 }    
 
-create_notion_data(data, cover_img_url)
+print(create_notion_data(data, cover_img_url))

@@ -41,5 +41,3 @@ def create_notion_data(properties, cover_url):
     res = requests.post(create_url, headers=headers, json=payload)
     return res
 
-
-get_pages()
