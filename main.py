@@ -12,7 +12,7 @@ duration = str(get_video_duration(video_url))
 data = {    
     "Video Url": {"url": video_url},
     "Adım": {"title": [{"text": {"content": title,},}]},
-    "Süre": {"rich_text": [ {"text": {"content": duration}}]}
+    "Kaç Dakika": {"number": duration},
 }    
 
 create_notion_data(data, cover_img_url)
