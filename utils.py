@@ -1,14 +1,22 @@
-import requests
-from datetime import datetime, timezone
 
-NOTION_TOKEN = "secret_WrEJo8j0bx6KLNBuvEG0ViMxaWiUTskPpN8a7yiGXYg"
-DATABASE_ID = "348f529615c44c2696b4d61c72765a44"
-    
-headers = {
-    "Authorization": "Bearer " + NOTION_TOKEN,
-    "Content-Type": "application/json",
-    "Notion-Version": "2022-06-28"
-}
+
+def convert_to_int(duraion_ptype: str):
+    durationRaw = duraion_ptype.split("PT")[1]
+    durationRaw = durationRaw.split("M")[0]
+
+    if durationRaw.count("H") != 0:
+        hours, minutes = durationRaw.split("H")
+        duration = int(hours)*60+int(minutes)
+    else:
+        duration = int(durationRaw)
+
+    return duration
+
+
+def get_video_id(video_url):
+    video_id = video_url.split("&")[0]
+    video_id = video_id.split("v=")[1]
+    return video_id
 
 
 def get_thumbnail(url: str):
@@ -23,20 +31,3 @@ def get_dataabase_id(url: str):
     database_id = url.split(".so/")[1]
     database_id = database_id.split("?v")[0]
     return database_id
-
-
-def create_notion_data(properties, cover_url):
-    cover =  {
-        "type": "external", 
-        "external": {
-            "url": cover_url
-        }
-    }
-
-    create_url = "https://api.notion.com/v1/pages"
-
-    payload = {"parent": {"database_id": DATABASE_ID}, "properties": properties, "cover": cover}
-
-    res = requests.post(create_url, headers=headers, json=payload)
-    return res
-
