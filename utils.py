@@ -31,3 +31,10 @@ def get_dataabase_id(url: str):
     database_id = url.split(".so/")[1]
     database_id = database_id.split("?v")[0]
     return database_id
+
+
+def get_channel_url(url: str):
+    channel_id = url.split("channel=")[1]
+    channel_url = f"https://www.youtube.com/@{channel_id}"
+    return channel_url
+

@@ -21,6 +21,3 @@ def get_video_duration(video_url):
     return duration
 
 
-
-
-
