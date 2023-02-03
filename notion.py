@@ -20,8 +20,8 @@ def get_path_list():
 
     data = response.json()  
 
-    with open('db.json', "w", encoding='utf8') as f:
-       json.dump(data, f, ensure_ascii=False, indent=4)
+    # with open('db.json', "w", encoding='utf8') as f:
+    #    json.dump(data, f, ensure_ascii=False, indent=4)
 
     results = data["results"]
 
@@ -49,8 +49,8 @@ def get_kanal_list():
 
     data = response.json()  
 
-    with open('db.json', "w", encoding='utf8') as f:
-       json.dump(data, f, ensure_ascii=False, indent=4)
+    # with open('db.json', "w", encoding='utf8') as f:
+    #    json.dump(data, f, ensure_ascii=False, indent=4)
 
     results = data["results"]
     

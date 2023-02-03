@@ -18,7 +18,6 @@ channel_name, channel_img_url = get_channel_infos(video_url)
 
 # EĞER YOKSA DATABASE'e KANALIN EKLENMESİ
 urlList = get_kanal_list()
-print(urlList)
 
 try:
     index = urlList.index(channel_url)
