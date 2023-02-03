@@ -10,10 +10,9 @@ video_url = input("Video Adresini Kopyala: ")
 
 # DEĞİŞKENLERİN OLUŞTURULMASI
 cover_img_url = get_thumbnail(video_url)
-duration = get_video_duration(video_url)
+duration, channel_url, channel_name = get_video_infos(video_url)
 
-channel_url = get_channel_url(video_url)
-channel_name, channel_img_url = get_channel_infos(video_url)
+channel_img_url = get_channel_infos(channel_url)
 
 
 # EĞER YOKSA DATABASE'e KANALIN EKLENMESİ
